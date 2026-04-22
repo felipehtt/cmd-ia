@@ -1,15 +1,15 @@
 import './index.scss'
 import Cabecalho from '../../components/cabecalho';
 
-export default function BotCmd() {
+export default function Comunidade() {
 
-    return (
+    return ( 
 
-        <div className='pagina-botcmd'>
+        <div className='pagina-comunidade'>
 
             <Cabecalho />
 
-            <h1> BotCmd </h1>
+            <h1>Comunidade</h1>
 
         </div>
 

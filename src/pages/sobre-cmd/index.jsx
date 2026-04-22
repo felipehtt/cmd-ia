@@ -1,4 +1,5 @@
 import './index.scss'
+import Cabecalho from '../../components/cabecalho';
 
 export default function SobreCmd() {
 
@@ -6,7 +7,7 @@ export default function SobreCmd() {
 
         <div className='pagina-sobrecmd'>
 
-            <h1>CMD IA</h1>
+            <Cabecalho />
 
         </div>
 
