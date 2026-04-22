@@ -1,6 +1,199 @@
+$bg-main: #001c30;
+$primary: #a17cf1;
+$text: #f4f7fb;
+$text-soft: #a9b7c6;
+$card-bg: rgba(255, 255, 255, 0.06);
+$border: rgba(255, 255, 255, 0.12);
 
-.pagina-login {
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background:
+        radial-gradient(circle at top left, rgba(161, 124, 241, 0.2), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(161, 124, 241, 0.12), transparent 30%),
+        linear-gradient(135deg, #00111d 0%, $bg-main 100%);
+}
 
-    
+.login-card {
+    width: 100%;
+    max-width: 980px;
+    min-height: 560px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: $card-bg;
+    border: 1px solid $border;
+    border-radius: 24px;
+    overflow: hidden;
+    backdrop-filter: blur(14px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
 
+    &__left,
+    &__right {
+        padding: 48px;
+    }
+
+    &__left {
+        background: linear-gradient(180deg, rgba(161, 124, 241, 0.16), rgba(161, 124, 241, 0.04));
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: $text;
+
+        h1 {
+            font-size: 40px;
+            margin-bottom: 16px;
+            line-height: 1.1;
+        }
+
+        p {
+            color: $text-soft;
+            font-size: 16px;
+            line-height: 1.6;
+            max-width: 360px;
+        }
+    }
+
+    &__right {
+        background: rgba(0, 0, 0, 0.12);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        h2 {
+            color: $text;
+            font-size: 32px;
+            margin-bottom: 24px;
+        }
+    }
+
+    &__tag {
+        display: inline-block;
+        width: fit-content;
+        padding: 8px 14px;
+        margin-bottom: 20px;
+        border-radius: 999px;
+        background: rgba(161, 124, 241, 0.16);
+        border: 1px solid rgba(161, 124, 241, 0.3);
+        color: $text;
+        font-size: 14px;
+    }
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    label {
+        color: $text;
+        font-size: 14px;
+    }
+
+    input {
+        width: 100%;
+        height: 50px;
+        padding: 0 16px;
+        border: 1px solid $border;
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.05);
+        color: $text;
+        outline: none;
+        transition: 0.2s ease;
+
+        &::placeholder {
+            color: $text-soft;
+        }
+
+        &:focus {
+            border-color: $primary;
+            box-shadow: 0 0 0 3px rgba(161, 124, 241, 0.15);
+        }
+    }
+}
+
+.password-field {
+    position: relative;
+
+    button {
+        position: absolute;
+        top: 50%;
+        right: 12px;
+        transform: translateY(-50%);
+        border: none;
+        background: transparent;
+        color: $primary;
+        cursor: pointer;
+        font-size: 13px;
+        font-weight: 600;
+    }
+}
+
+.form-options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    color: $text-soft;
+    font-size: 14px;
+
+    label {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    a {
+        color: $primary;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.login-button {
+    height: 52px;
+    border: none;
+    border-radius: 14px;
+    background: $primary;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s ease;
+
+    &:hover {
+        background: #9068ea;
+        transform: translateY(-1px);
+    }
+}
+
+@media (max-width: 768px) {
+    .login-card {
+        grid-template-columns: 1fr;
+
+        &__left,
+        &__right {
+            padding: 32px 24px;
+        }
+
+        &__left h1 {
+            font-size: 30px;
+        }
+    }
+
+    .form-options {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
