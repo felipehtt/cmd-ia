@@ -1,6 +1,53 @@
-
 .pagina-home {
 
+    .conteiner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #001C30;
+        box-shadow: #01090f 0px 0px 9px;
 
+        padding: 40px 10%;
+        gap: 50px;
 
+        img {
+            width: 400px;
+        }
+
+        .cont1 {
+
+            background-color: #001C30;
+            color: #fff;
+            padding: 40px;  
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            .btn-comecar {
+                background-color: #fff;
+                color: #001C30;
+                padding: 10px 20px;
+                border-radius: 5px;
+                font-size: 14px;
+                font-weight: 600;
+                text-decoration: none;
+            }
+        }
+        
+    }
+
+    @media (max-width: 768px) {
+
+    .pagina-home {
+
+        .conteiner {
+            flex-direction: column;   // 🔥 empilha no mobile
+            text-align: center;
+
+            img {
+                width: 250px;
+            }
+        }
+    }
+}
 }
